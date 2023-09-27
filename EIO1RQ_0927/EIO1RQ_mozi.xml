@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mozi[
+<!ELEMENT mozi (film*)>
+<!ELEMENT film (rendezo+, szinesz+, iro+)>
+<!ATTLIST film id CDATA #REQUIRED>
+<!ATTLIST film mufaj (horror|scfi-fi|akció) "horror">
+<!ATTLIST rendezo id CDATA #REQUIRED>
+<!ATTLIST szinesz id CDATA #REQUIRED>
+<!ATTLIST iro id CDATA #REQUIRED>
+]>
+
+
+<mozi>
+    <film id="txn_nxm_2jb" mufaj="horror">
+        <rendezo id="nzk_4nxm_2hb"/>
+        <szinesz id="u5q_4xm_2jb"/>
+        <iro id="trv_4xm_2jb"/>
+    </film>
+</mozi>

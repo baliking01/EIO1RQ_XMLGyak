@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE EIO1RQ_orarend[
+<!ELEMENT ora id CDATA #REQUIRED>
+<!ELEMENT ora típus (előadás|gyakorlat) "előadás">
+<!ELEMENT ora (targy, idopont(nap, tol, ig), helyszín, oktato, szak)>
+<!ELEMENT targy CDATA>
+]>
+
+
+<EIO1RQ_orarend>
+    <ora id="01" típus="előadás">
+        <targy>WEB Technológiák</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>14:00</tol>
+            <ig>15:30</ig>
+        </idopont>
+        <helyszín>A1 305.</helyszín>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="02" típus="gyakorlat">
+        <targy>WEB Technológiák</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>16:00</tol>
+            <ig>17:30</ig>
+        </idopont>
+        <helyszín>Inf. 202..</helyszín>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="03" típus="előadás">
+        <targy>Mesterséges Intelligencia</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>10:00</tol>
+            <ig>11:30</ig>
+        </idopont>
+        <helyszín>A1 XXXII</helyszín>
+        <oktato>Fazekas Levente</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="04" típus="gyakorlat">
+        <targy>Mesterséges Intelligencia</targy>
+        <idopont>
+            <nap>Csütörtök</nap>
+            <tol>10:00</tol>
+            <ig>11:30</ig>
+        </idopont>
+        <helyszín>A2 I.</helyszín>
+        <oktato>Fazekas Levente</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="05" típus="előadás">
+        <targy>Adatkezelés XML-ben</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>12:00</tol>
+            <ig>13:30</ig>
+        </idopont>
+        <helyszín>A1 XXXII</helyszín>
+        <oktato>Dr. Bednarik László</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="06" típus="gyakorlat">
+        <targy>Adatkezelés XML-ben</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>10:00</tol>
+            <ig>11:30</ig>
+        </idopont>
+        <helyszín>Inf. 101.</helyszín>
+        <oktato>Dr. Bednarik László</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="07" típus="előadás">
+        <targy>Vállalati Információs Rendszerek</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>14:00</tol>
+            <ig>15:30</ig>
+        </idopont>
+        <helyszín>Inf. 101.</helyszín>
+        <oktato>Dr. Sasvári Péter</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="08" típus="gyakorlat">
+        <targy>Vállalati Információs Rendszerek</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>18:00</tol>
+            <ig>19:30</ig>
+        </idopont>
+        <helyszín>Inf. 103.</helyszín>
+        <oktato>Dr. Sasvári Péter</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+</EIO1RQ_orarend>
