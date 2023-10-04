@@ -1,0 +1,15 @@
+<!ELEMENT EIO1RQ_orarend (ora*)>
+<!ATTLIST ora id CDATA #REQUIRED>
+<!ATTLIST ora típus (előadás|gyakorlat) "előadás">
+<!ELEMENT ora (targy, idopont, helyszín, oktato, szak)>
+
+<!ELEMENT targy (#PCDATA)>
+
+<!ELEMENT idopont (nap, tol, ig)>
+    <!ELEMNT nap (#PCDATA)>
+    <!ELEMNT tol (#PCDATA)>
+    <!ELEMNT ig (#PCDATA)>
+
+<!ELEMENT helyszín (#PCDATA)>
+<!ELEMENT oktato (#PCDATA)>
+<!ELEMENT szak (#PCDATA)>
