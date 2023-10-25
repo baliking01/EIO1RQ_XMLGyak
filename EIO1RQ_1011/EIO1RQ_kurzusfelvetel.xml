@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<kurzusfelvetel tanev="2023/2024_1" egyetem="ME" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
+
+    <hallgato id = "EIO1RQ">
+        <hnev>Nagy Balázs</hnev>
+        <szulev>2002-08-30</szulev>
+        <szak evf="5">Programtervező informatikus</szak>
+    </hallgato>
+
+    <kurzusok>
+
+        <kurzus id="GEIAL331-B">
+            <kurzusnev>Web Technológiák 1.</kurzusnev>
+            <kredit>5</kredit>
+            <hely>XXX</hely>
+            <idopont>Hetfő 14:00 - 18:00</idopont>
+            <oktato>Agárdi Anita</oktato>
+        </kurzus>
+
+        <kurzus id = "GEMAK234-B" >
+            <kurzusnev >Algoritmusok és vizsgálatuk</kurzusnev>
+            <kredit>5</kredit>
+            <hely>320</hely>
+            <idopont>14:00-18:00</idopont>
+            <oktato>Dr. Házy Attila</oktato>
+            <jovahagyas>igen</jovahagyas>
+        </kurzus>
+
+        <kurzus id = " GEMAK234-B" jovahagyas="igen">
+            <kurzusnev >Algoritmusok és vizsgálatuk</kurzusnev>
+            <kredit>5</kredit>
+            <hely>320</hely>
+            <idopont>14:00-18:00</idopont>
+            <oktato>Dr. Házy Attila</oktato>
+            <jovahagyas>igen</jovahagyas>
+        </kurzus>
+
+        <kurzus id = " GEMAK234-B" nyelv ="magyar" >
+            <kurzusnev >Algoritmusok és vizsgálatuk</kurzusnev>
+            <kredit>5</kredit>
+            <hely>320</hely>
+            <idopont>14:00-18:00</idopont>
+            <oktato>Dr. Házy Attila</oktato>
+            <jovahagyas>igen</jovahagyas>
+        </kurzus>
+
+
+    </kurzusok>
+</kurzusfelvetel>
