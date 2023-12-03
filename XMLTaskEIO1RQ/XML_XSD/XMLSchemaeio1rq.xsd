@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <!-- Egyszerű típusok kigyűjtése -->
+  <xs:element name="irányító_szám" type="irszámTípus"/>
+  <xs:element name="város" type="xs:string"/>
+  <xs:element name="utca_házszám" type="utcaházTípus"/>
+  <xs:element name="termék_név" type="xs:string"/>
+  <xs:element name="mennyiség" type="mennyiségTípus"/>
+  <xs:element name="leszállítva" type="xs:boolean"/>
+  <xs:element name="rendelés_dátuma" type="xs:date"/>
+  <xs:element name="tel_szám" type="telefonTípus"/>
+  <xs:element name="email" type="emailTípus"/>
+  <xs:element name="cégnév" type="xs:string"/>
+  <xs:element name="beosztás" type="xs:string"/>
+  <xs:element name="mikortól" type="xs:date"/>
+  <xs:element name="név" type="xs:string"/>
+
+
+  <!-- Egyszerű típusok definiálása -->
+  <xs:simpleType name="irszámTípus">
+    <xs:restriction base="xs:int">
+        <xs:minInclusive value="1000" />
+        <xs:maxInclusive value="9999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="utcaházTípus">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="([a-z A-Z]* \d+.( \d+\/\d+)?)" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mennyiségTípus">
+    <xs:restriction base="xs:int">
+       <xs:minInclusive value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="telefonTípus">
+    <xs:restriction base="xs:string">
+       <xs:pattern value="(\+36\ ?\d{1,2}\ ?\d{3}\ ?\d{4})" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="emailTípus">
+    <xs:restriction base="xs:string">
+       <xs:pattern value="([a-zA-Z0-9]*@[a-zA-Z]*.[a-zA-Z]*)" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+
+  <!-- Komplex típusok definiálása-->
+  <xs:complexType name="rendelésTípus">
+    <xs:sequence>
+      <xs:element ref="termék_név"/>
+      <xs:element ref="mennyiség"/>
+      <xs:element ref="leszállítva"/>
+      <xs:element name="szállítási_hely">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="irányító_szám"/>
+            <xs:element ref="város"/>
+            <xs:element ref="utca_házszám"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="RENDELÉS_ID" type="xs:integer" use="required" />
+    <xs:attribute name="RÉSZLEG_FK" type="xs:integer" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="rendelTípus">
+    <xs:sequence>
+      <xs:element ref="rendelés_dátuma"/>
+    </xs:sequence>
+    <xs:attribute name="RENDEL_ID" type="xs:integer" use="required" />
+    <xs:attribute name="RENDELÉS_FK" type="xs:integer" use="required" />
+    <xs:attribute name="MEGRENDELŐ_FK" type="xs:integer" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="megrendelőTípus">
+    <xs:sequence>
+      <xs:element ref="cégnév"/>
+      <xs:element name="elérhetőség">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="tel_szám"/>
+            <xs:element ref="email"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="MEGRENDELŐ_ID" type="xs:integer" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="dolgozikTípus">
+    <xs:sequence>
+      <xs:element ref="beosztás"/>
+    </xs:sequence>
+    <xs:attribute name="DOLGOZIK_ID" type="xs:integer" use="required" />
+    <xs:attribute name="RÉSZLEG_FK" type="xs:integer" use="required" />
+    <xs:attribute name="DOLGOZÓ_FK" type="xs:integer" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="dolgozóTípus">
+    <xs:sequence>
+      <xs:element ref="név"/>
+    </xs:sequence>
+    <xs:attribute name="DOLGOZÓ_ID" type="xs:integer" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="vezetiTípus">
+    <xs:sequence>
+      <xs:element ref="mikortól"/>
+    </xs:sequence>
+    <xs:attribute name="VEZETI_ID" type="xs:integer" use="required" />
+    <xs:attribute name="DOLGOZÓ_FK" type="xs:integer" use="required" />
+    <xs:attribute name="RÉSZLEG_FK" type="xs:integer" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="részlegTípus">
+    <xs:sequence>
+      <xs:element ref="név"/>
+    </xs:sequence>
+    <xs:attribute name="RÉSZLEG_ID" type="xs:integer" use="required" />
+  </xs:complexType>
+
+
+
+  <!-- Dokumentum felépítése a gyökérleemtől -->
+  <xs:element name="EIO1RQ_Logisztikai_Cég">
+    <xs:complexType>
+      <xs:sequence>
+         <xs:element name="rendelés" type="rendelésTípus" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="rendel" type="rendelTípus" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="megrendelő" type="megrendelőTípus" minOccurs="0" maxOccurs="10"/>
+         <xs:element name="dolgozik" type="dolgozikTípus" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="dolgozó" type="dolgozóTípus" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="vezeti" type="vezetiTípus" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="részleg" type="részlegTípus" minOccurs="0" maxOccurs="20"/>
+      </xs:sequence>
+    </xs:complexType>
+
+
+
+    <!-- Elsődleges kulcsok-->
+    <xs:key name="rendelés_kulcs">
+      <xs:selector xpath="rendelés"/>
+      <xs:field xpath="@RENDELÉS_ID"/>
+    </xs:key>
+
+    <xs:key name="rendel_kulcs">
+      <xs:selector xpath="rendel"/>
+      <xs:field xpath="@RENDEL_ID"/>
+    </xs:key>
+
+    <xs:key name="megrendelő_kulcs">
+      <xs:selector xpath="megrendelő"/>
+      <xs:field xpath="@MEGRENDELŐ_ID"/>
+    </xs:key>
+
+    <xs:key name="dolgozik_kulcs">
+      <xs:selector xpath="dolgozik"/>
+      <xs:field xpath="@DOLGOZIK_ID"/>
+    </xs:key>
+
+    <xs:key name="dolgozó_kulcs">
+      <xs:selector xpath="dolgozó"/>
+      <xs:field xpath="@DOLGOZÓ_ID"/>
+    </xs:key>
+
+    <xs:key name="vezeti_kulcs">
+      <xs:selector xpath="vezeti"/>
+      <xs:field xpath="@VEZETI_ID"/>
+    </xs:key>
+
+    <xs:key name="részleg_kulcs">
+      <xs:selector xpath="részleg"/>
+      <xs:field xpath="@RÉSZLEG_ID"/>
+    </xs:key>
+
+
+
+    <!-- Idegen kulcsok-->
+    <xs:keyref name="részleg_rendelés_kulcs" refer="részleg_kulcs">
+      <xs:selector xpath="rendelés"/>
+      <xs:field xpath="@részleg"/>
+    </xs:keyref>
+
+    <xs:keyref name="rendel_rendelés_kulcs" refer="rendelés_kulcs">
+      <xs:selector xpath="rendel"/>
+      <xs:field xpath="@rendelés"/>
+    </xs:keyref>
+
+    <xs:keyref name="rendel_megrendelő_kulcs" refer="megrendelő_kulcs">
+      <xs:selector xpath="rendel"/>
+      <xs:field xpath="@megrendelő"/>
+    </xs:keyref>
+
+    <xs:keyref name="dolgozik_részleg_kulcs" refer="részleg_kulcs">
+      <xs:selector xpath="dolgozik"/>
+      <xs:field xpath="@részleg"/>
+    </xs:keyref>
+
+    <xs:keyref name="dolgozik_dolgozó_kulcs" refer="dolgozó_kulcs">
+      <xs:selector xpath="dolgozik"/>
+      <xs:field xpath="@dolgozó"/>
+    </xs:keyref>
+
+    <xs:keyref name="vezeti_dolgozó_kulcs" refer="dolgozó_kulcs">
+      <xs:selector xpath="vezeti"/>
+      <xs:field xpath="@dolgozó"/>
+    </xs:keyref>
+
+    <xs:keyref name="vezeti_részleg_kulcs" refer="részleg_kulcs">
+      <xs:selector xpath="vezeti"/>
+      <xs:field xpath="@részleg"/>
+    </xs:keyref>
+
+  </xs:element>
+
+</xs:schema>
