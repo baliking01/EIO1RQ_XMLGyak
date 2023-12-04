@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<EIO1RQ_Logisztikai_Cég xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
+
+	<!-- Rendelés -->
+	<rendelés RENDELÉS_ID="1" RÉSZLEG_FK="1">
+		<termék_név>Ásványvíz</termék_név>
+		<mennyiség>13</mennyiség>
+		<leszállítva>true</leszállítva>
+		<szállítási_hely>
+			<irányító_szám>3519</irányító_szám>
+			<város>Miskolc</város>
+			<utca_házszám>Apat utca 12.</utca_házszám>
+		</szállítási_hely>
+	</rendelés>
+
+	<rendelés RENDELÉS_ID="2" RÉSZLEG_FK="2">
+		<termék_név>Hamburger pogácsa</termék_név>
+		<mennyiség>20</mennyiség>
+		<leszállítva>false</leszállítva>
+		<szállítási_hely>
+			<irányító_szám>6723</irányító_szám>
+			<város>Szedeg</város>
+			<utca_házszám>Eperjesi sor 2.</utca_házszám>
+		</szállítási_hely>
+	</rendelés>
+
+	<rendelés RENDELÉS_ID="3" RÉSZLEG_FK="3">
+		<termék_név>Sony WH-XB910N fejhallgató</termék_név>
+		<mennyiség>8</mennyiség>
+		<leszállítva>true</leszállítva>
+		<szállítási_hely>
+			<irányító_szám>9025</irányító_szám>
+			<város>Győr</város>
+			<utca_házszám>Akac utca 35.</utca_házszám>
+		</szállítási_hely>
+	</rendelés>
+
+	<rendelés RENDELÉS_ID="4" RÉSZLEG_FK="2">
+		<termék_név>Sertéskaraj</termék_név>
+		<mennyiség>20</mennyiség>
+		<leszállítva>true</leszállítva>
+		<szállítási_hely>
+			<irányító_szám>7634</irányító_szám>
+			<város>Pécs</város>
+			<utca_házszám>Lankas utca 22.</utca_házszám>
+		</szállítási_hely>
+	</rendelés>
+
+	<rendelés RENDELÉS_ID="5" RÉSZLEG_FK="1">
+		<termék_név>Coca Cola Cherry 6x1.5L</termék_név>
+		<mennyiség>17</mennyiség>
+		<leszállítva>false</leszállítva>
+		<szállítási_hely>
+			<irányító_szám>4028</irányító_szám>
+			<város>Debrecen</város>
+			<utca_házszám>Abonyi utca 72.</utca_házszám>
+		</szállítási_hely>
+	</rendelés>
+
+	<!-- Rendel -->
+	<rendel RENDEL_ID="1" RENDELÉS_FK="1" MEGRENDELŐ_FK="1">
+		<rendelés_dátuma>2023-01-17</rendelés_dátuma>
+	</rendel>
+
+	<rendel RENDEL_ID="2" RENDELÉS_FK="2" MEGRENDELŐ_FK="2">
+		<rendelés_dátuma>2023-06-04</rendelés_dátuma>
+	</rendel>
+	
+	<rendel RENDEL_ID="3" RENDELÉS_FK="3" MEGRENDELŐ_FK="3">
+		<rendelés_dátuma>2023-08-23</rendelés_dátuma>
+	</rendel>
+
+	<rendel RENDEL_ID="4" RENDELÉS_FK="3" MEGRENDELŐ_FK="1">
+		<rendelés_dátuma>2023-02-10</rendelés_dátuma>
+	</rendel>
+
+	<rendel RENDEL_ID="5" RENDELÉS_FK="3" MEGRENDELŐ_FK="3">
+		<rendelés_dátuma>2022-11-03</rendelés_dátuma>
+	</rendel>
+
+	<!-- Megrendelő -->
+	<megrendelő MEGRENDELŐ_ID="1">
+		<cégnév>Fenyó és Társa Kft.</cégnév>
+		<elérhetőség>
+			<tel_szám>+3612045966</tel_szám>
+			<email>info@tlx.hu</email>
+		</elérhetőség>
+	</megrendelő>
+
+	<megrendelő MEGRENDELŐ_ID="2">
+		<cégnév>Rothmayer Bt.</cégnév>
+		<elérhetőség>
+			<tel_szám>+3633413665</tel_szám>
+			<email>rothmayer1@gmail.com</email>
+		</elérhetőség>
+	</megrendelő>
+
+	<megrendelő MEGRENDELŐ_ID="3">
+		<cégnév>Horváth Uno Kft.</cégnév>
+		<elérhetőség>
+			<tel_szám>+36705469391</tel_szám>
+			<email>horvathuno@gmail.com</email>
+		</elérhetőség>
+	</megrendelő>
+
+
+
+	<!-- Dolgozik -->
+	<dolgozik DOLGOZIK_ID="1" RÉSZLEG_FK="1" DOLGOZÓ_FK="1">
+		<beosztás>Logisztikai menedzser</beosztás>
+	</dolgozik>
+
+	<dolgozik DOLGOZIK_ID="2" RÉSZLEG_FK="1" DOLGOZÓ_FK="2">
+		<beosztás>Élelmiszer mérnök</beosztás>
+	</dolgozik>
+
+	<dolgozik DOLGOZIK_ID="3" RÉSZLEG_FK="2" DOLGOZÓ_FK="3">
+		<beosztás>Targonca kezelő</beosztás>
+	</dolgozik>
+
+	<dolgozik DOLGOZIK_ID="4" RÉSZLEG_FK="2" DOLGOZÓ_FK="4">
+		<beosztás>Villanyszerelő</beosztás>
+	</dolgozik>
+
+	<dolgozik DOLGOZIK_ID="5" RÉSZLEG_FK="3" DOLGOZÓ_FK="5">
+		<beosztás>Informatikus</beosztás>
+	</dolgozik>
+
+	<dolgozik DOLGOZIK_ID="6" RÉSZLEG_FK="3" DOLGOZÓ_FK="6">
+		<beosztás>Gazdasági tanácsadó</beosztás>
+	</dolgozik>
+
+
+
+	<!-- Dolgozó -->
+	<dolgozó DOLGOZÓ_ID="1">
+		<név>Kovács Béla</név>
+	</dolgozó>
+
+	<dolgozó DOLGOZÓ_ID="2">
+		<név>Kiss János</név>
+	</dolgozó>
+
+	<dolgozó DOLGOZÓ_ID="3">
+		<név>Eged Csanád</név>
+	</dolgozó>
+
+	<dolgozó DOLGOZÓ_ID="4">
+		<név>Kun Tamás</név>
+	</dolgozó>
+
+	<dolgozó DOLGOZÓ_ID="5">
+		<név>Jámbor Andrea</név>
+	</dolgozó>
+
+	<dolgozó DOLGOZÓ_ID="6">
+		<név>Tóth Sándor</név>
+	</dolgozó>
+
+
+
+	<!-- Vezeti -->
+	<vezeti VEZETI_ID="1" RÉSZLEG_FK="1" DOLGOZÓ_FK="1">
+		<mikortól>2017-01-01</mikortól>
+	</vezeti>
+
+	<vezeti VEZETI_ID="2" RÉSZLEG_FK="2" DOLGOZÓ_FK="3">
+		<mikortól>2019-04-15</mikortól>
+	</vezeti>
+
+	<vezeti VEZETI_ID="3" RÉSZLEG_FK="3" DOLGOZÓ_FK="6">
+		<mikortól>2020-09-07</mikortól>
+	</vezeti>
+
+
+
+	<!-- Részleg -->
+	<részleg RÉSZLEG_ID="1">
+		<név>Élelmiszer</név>
+	</részleg>
+
+	<részleg RÉSZLEG_ID="2">
+		<név>Ital</név>
+	</részleg>
+	
+	<részleg RÉSZLEG_ID="3">
+		<név>Informatika</név>
+	</részleg>
+
+</EIO1RQ_Logisztikai_Cég>
