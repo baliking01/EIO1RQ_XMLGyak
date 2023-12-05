@@ -20,52 +20,52 @@ public class DomQueryEIO1RQ {
 	        Document doc = dBuilder.parse(inputFile);
 	        doc.getDocumentElement().normalize();
 	        
-	        System.out.print("2b) GyÃ¶kÃ©relem: ");
+	        System.out.print("2b) Gyökérelem: ");
 	        System.out.println(doc.getDocumentElement().getNodeName());
-	        NodeList nodes = doc.getElementsByTagName("rendelÃ©s");
+	        NodeList nodes = doc.getElementsByTagName("rendelés");
 	        System.out.println("----------------------------");
 	        
 	        
-	        System.out.println("\nAz Ã¶sszes rendelÃ©s listÃ¡ja");
+	        System.out.println("\nAz összes rendelés listája");
 	        System.out.println("----------------------------");
 	        for(int i = 0; i < nodes.getLength(); i++) {
 	        	Node node = nodes.item(i);
 	        	if (node.getNodeType() == Node.ELEMENT_NODE) {
 	        		 Element eElement = (Element) node;
-	        		 System.out.println(eElement.getElementsByTagName("termÃ©k_nÃ©v").item(0).getTextContent());
+	        		 System.out.println(eElement.getElementsByTagName("termék_név").item(0).getTextContent());
 	        	}
 	        }
 	        
-	        System.out.println("\nRÃ©szlegek szÃ¡ma");
+	        System.out.println("\nRészlegek száma");
 	        System.out.println("----------------------------");
-	        nodes = doc.getElementsByTagName("rÃ©szleg");
+	        nodes = doc.getElementsByTagName("részleg");
 	        System.out.println(nodes.getLength());
 	        
 	        
 	        
-	        System.out.println("\nMelyik rÃ©szlegre mennyi megrendelÃ©s Ã©rkezett");
+	        System.out.println("\nMelyik részlegre mennyi megrendelés érkezett");
 	        System.out.println("----------------------------");
 	        int[] rendelesek = new int[nodes.getLength()];
 	        
-	        nodes = doc.getElementsByTagName("rendelÃ©s");
+	        nodes = doc.getElementsByTagName("rendelés");
 	        for(int i = 0; i < nodes.getLength(); i++) {
 	        	Node node = nodes.item(i);
 	        	if (node.getNodeType() == Node.ELEMENT_NODE) {
 	        		 Element eElement = (Element) node;
-	        		 rendelesek[Integer.parseInt(eElement.getAttribute("RÃ‰SZLEG_FK")) - 1]++;
+	        		 rendelesek[Integer.parseInt(eElement.getAttribute("RÉSZLEG_FK")) - 1]++;
 	        	}
 	        }
-	        nodes = doc.getElementsByTagName("rÃ©szleg");
+	        nodes = doc.getElementsByTagName("részleg");
 	        for(int i = 0; i < nodes.getLength(); i++) {
 	        	Node node = nodes.item(i);
 	        	if (node.getNodeType() == Node.ELEMENT_NODE) {
 	        		 Element eElement = (Element) node;
-	        		 System.out.println(eElement.getElementsByTagName("nÃ©v").item(0).getTextContent() + ": " + rendelesek[i]);
+	        		 System.out.println(eElement.getElementsByTagName("név").item(0).getTextContent() + ": " + rendelesek[i]);
 	        	}
 	        }
 	        
 	        
-	        System.out.println("\nAz mÃ¡sodik rÃ©szlegen dolgozÃ³k listÃ¡ja");
+	        System.out.println("\nAz második részlegen dolgozók listája");
 	        System.out.println("----------------------------");
 	        nodes = doc.getElementsByTagName("dolgozik");
 	        List<String> workersID = new ArrayList<String>();
@@ -73,40 +73,40 @@ public class DomQueryEIO1RQ {
 	        	Node node = nodes.item(i);
 	        	if (node.getNodeType() == Node.ELEMENT_NODE) {
 	        		 Element eElement = (Element) node;
-	        		 if(eElement.getAttribute("RÃ‰SZLEG_FK").equals("2")) {
-	        			 workersID.add(eElement.getAttribute("DOLGOZÃ“_FK"));
+	        		 if(eElement.getAttribute("RÉSZLEG_FK").equals("2")) {
+	        			 workersID.add(eElement.getAttribute("DOLGOZÓ_FK"));
 	        		 }
 	        	}
 	        }
-	        nodes = doc.getElementsByTagName("dolgozÃ³");
+	        nodes = doc.getElementsByTagName("dolgozó");
 	        for(int i = 0; i < nodes.getLength(); i++) {
 	        	Node node = nodes.item(i);
 	        	if (node.getNodeType() == Node.ELEMENT_NODE) {
 	        		 Element eElement = (Element) node;
-	        		 if(workersID.contains(eElement.getAttribute("DOLGOZÃ“_ID"))) {
-	        			 System.out.println(eElement.getElementsByTagName("nÃ©v").item(0).getTextContent());
+	        		 if(workersID.contains(eElement.getAttribute("DOLGOZÓ_ID"))) {
+	        			 System.out.println(eElement.getElementsByTagName("név").item(0).getTextContent());
 	        		 }
 	        	}
 	        }
 	        
 	        
-	        System.out.println("\nEgyes rÃ©szlegeket mikortÃ³l vezeti a kijelÃ¶lt szemÃ©ly");
+	        System.out.println("\nEgyes részlegeket mikortól vezeti a kijelölt személy");
 	        System.out.println("----------------------------");
 	        nodes = doc.getElementsByTagName("vezeti");
-	        NodeList workers = doc.getElementsByTagName("dolgozÃ³");
-	        NodeList divs = doc.getElementsByTagName("rÃ©szleg");
+	        NodeList workers = doc.getElementsByTagName("dolgozó");
+	        NodeList divs = doc.getElementsByTagName("részleg");
 	        for(int i = 0; i < nodes.getLength(); i++) {
 	        	Node node = nodes.item(i);
 	        	if (node.getNodeType() == Node.ELEMENT_NODE) {
 	        		 Element eElement = (Element) node;
-	        		 eElement.getAttribute("RÃ‰SZLEG_FK");
+	        		 eElement.getAttribute("RÉSZLEG_FK");
 	        		 
 	        		 for(int j = 0; j < divs.getLength(); j++) {
 	        			 Node n1 = divs.item(j);
 	        			 if (n1.getNodeType() == Node.ELEMENT_NODE) {
 	     	        		 Element elem1 = (Element) n1;
-	     	        		 if(elem1.getAttribute("RÃ‰SZLEG_ID").equals(eElement.getAttribute("RÃ‰SZLEG_FK"))) {
-	     	        			 System.out.print(elem1.getElementsByTagName("nÃ©v").item(0).getTextContent() + " : ");
+	     	        		 if(elem1.getAttribute("RÉSZLEG_ID").equals(eElement.getAttribute("RÉSZLEG_FK"))) {
+	     	        			 System.out.print(elem1.getElementsByTagName("név").item(0).getTextContent() + " : ");
 	     	        		 }
 	        			 }
 	        		 }
@@ -115,8 +115,8 @@ public class DomQueryEIO1RQ {
 	        			 Node n1 = workers.item(j);
 	        			 if (n1.getNodeType() == Node.ELEMENT_NODE) {
 	     	        		 Element elem1 = (Element) n1;
-	     	        		 if(elem1.getAttribute("DOLGOZÃ“_ID").equals(eElement.getAttribute("DOLGOZÃ“_FK"))) {
-	     	        			 System.out.println(elem1.getElementsByTagName("nÃ©v").item(0).getTextContent());
+	     	        		 if(elem1.getAttribute("DOLGOZÓ_ID").equals(eElement.getAttribute("DOLGOZÓ_FK"))) {
+	     	        			 System.out.println(elem1.getElementsByTagName("név").item(0).getTextContent());
 	     	        		 }
 	        			 }
 	        		 }

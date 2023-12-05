@@ -1,13 +1,10 @@
 package hu.domparse.eio1rq;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpression;
-import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -15,36 +12,43 @@ import org.w3c.dom.NodeList;
 
 public class DomReadEIO1RQ {
 	public static void main(String args[]) {
-		System.out.println("2a) Adatolvas√°s");
+		System.out.println("2a) Adatolvas·s");
 		
 		try {
-			File inputFile = new File("XMLeio1rq.xml");
-			System.out.println(inputFile);
-			
+			File inputFile = new File("XMLeio1rq.xml");			
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			factory.setNamespaceAware(true); // never forget this!
+			factory.setNamespaceAware(true);
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			Document doc = builder.parse(inputFile);
-			
-			XPathFactory xpathfactory = XPathFactory.newInstance();
-			XPath xpath = xpathfactory.newXPath();
-			
-			XPathExpression expr =  xpath.compile("*");
-			Object result = expr.evaluate(doc, XPathConstants.NODESET);
-		    NodeList nodes = (NodeList) result;
+				
+		    NodeList root = doc.getChildNodes();
+		    ArrayList<String> content = getAllLeaves((Node)root);
 		    
-		    for(int i = 0; i < nodes.getLength(); i++) {
-		    	for(int j = 0; j < nodes.item(i).getChildNodes().getLength(); j++) {
-		    		if(nodes.item(i).getChildNodes().item(j).getNodeType() == Node.ELEMENT_NODE) {
-		    		//System.out.print(children.item(i).getNodeType());
-		    		System.out.println(nodes.item(i).getChildNodes().item(j).getTextContent());
-		    		}
-		    	}
-		    	
+		    for(int i = 0; i < content.size(); i++) {
+		    	System.out.print(content.get(i));
 		    }
 		    
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		 
+	}
+	
+	public static ArrayList<String> getAllLeaves(Node node) {
+		ArrayList<String> content = new ArrayList<String>();
+		NodeList children = node.getChildNodes();
+		if(children.getLength() == 0) {
+			if(node.getNodeType() != Node.COMMENT_NODE) content.add(" "+node.getTextContent());			
+		}
+		else {
+			if(node.getNodeType() != Node.DOCUMENT_NODE) content.add(node.getNodeName());
+			int len = children.getLength();
+			len -= (len > 1) ? 1 : 0;
+			for(int i = 0; i < len; i++) {
+				content.addAll(getAllLeaves(children.item(i)));
+			}
+		}
+		
+		return content;
 	}
 }
