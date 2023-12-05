@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<EIO1RQ_Logisztikai_Cég xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><EIO1RQ_Logisztikai_Cég xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
 
 	<!-- Rendelés -->
 	<rendelés RENDELÉS_ID="1" RÉSZLEG_FK="1">
@@ -38,7 +35,7 @@ xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
 	</rendelés>
 
 	<rendelés RENDELÉS_ID="4" RÉSZLEG_FK="2">
-		<termék_név>Sertéskaraj</termék_név>
+		<termék_név>Csirkemellfilé</termék_név>
 		<mennyiség>20</mennyiség>
 		<leszállítva>true</leszállítva>
 		<szállítási_hely>
@@ -60,24 +57,24 @@ xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
 	</rendelés>
 
 	<!-- Rendel -->
-	<rendel RENDEL_ID="1" RENDELÉS_FK="1" MEGRENDELŐ_FK="1">
+	<rendel MEGRENDELŐ_FK="1" RENDEL_ID="1" RENDELÉS_FK="1">
 		<rendelés_dátuma>2023-01-17</rendelés_dátuma>
 	</rendel>
 
-	<rendel RENDEL_ID="2" RENDELÉS_FK="2" MEGRENDELŐ_FK="2">
+	<rendel MEGRENDELŐ_FK="2" RENDEL_ID="2" RENDELÉS_FK="2">
 		<rendelés_dátuma>2023-06-04</rendelés_dátuma>
 	</rendel>
 	
-	<rendel RENDEL_ID="3" RENDELÉS_FK="3" MEGRENDELŐ_FK="3">
+	<rendel MEGRENDELŐ_FK="3" RENDEL_ID="3" RENDELÉS_FK="3">
 		<rendelés_dátuma>2023-08-23</rendelés_dátuma>
 	</rendel>
 
-	<rendel RENDEL_ID="4" RENDELÉS_FK="4" MEGRENDELŐ_FK="1">
+	<rendel MEGRENDELŐ_FK="1" RENDEL_ID="4" RENDELÉS_FK="3">
 		<rendelés_dátuma>2023-02-10</rendelés_dátuma>
 	</rendel>
 
-	<rendel RENDEL_ID="5" RENDELÉS_FK="5" MEGRENDELŐ_FK="3">
-		<rendelés_dátuma>2022-11-03</rendelés_dátuma>
+	<rendel MEGRENDELŐ_FK="3" RENDEL_ID="5" RENDELÉS_FK="3">
+		<rendelés_dátuma>2023-12-05</rendelés_dátuma>
 	</rendel>
 
 	<!-- Megrendelő -->
@@ -91,10 +88,7 @@ xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
 
 	<megrendelő MEGRENDELŐ_ID="2">
 		<cégnév>Rothmayer Bt.</cégnév>
-		<elérhetőség>
-			<tel_szám>+3633413665</tel_szám>
-			<email>rothmayer1@gmail.com</email>
-		</elérhetőség>
+		<elérhetőség>rothmayerbt@gmail.comm</elérhetőség>
 	</megrendelő>
 
 	<megrendelő MEGRENDELŐ_ID="3">
@@ -108,27 +102,27 @@ xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
 
 
 	<!-- Dolgozik -->
-	<dolgozik DOLGOZIK_ID="1" RÉSZLEG_FK="1" DOLGOZÓ_FK="1">
+	<dolgozik DOLGOZIK_ID="1" DOLGOZÓ_FK="1" RÉSZLEG_FK="1">
 		<beosztás>Logisztikai menedzser</beosztás>
 	</dolgozik>
 
-	<dolgozik DOLGOZIK_ID="2" RÉSZLEG_FK="1" DOLGOZÓ_FK="2">
+	<dolgozik DOLGOZIK_ID="2" DOLGOZÓ_FK="2" RÉSZLEG_FK="1">
 		<beosztás>Élelmiszer mérnök</beosztás>
 	</dolgozik>
 
-	<dolgozik DOLGOZIK_ID="3" RÉSZLEG_FK="2" DOLGOZÓ_FK="3">
+	<dolgozik DOLGOZIK_ID="3" DOLGOZÓ_FK="3" RÉSZLEG_FK="2">
 		<beosztás>Targonca kezelő</beosztás>
 	</dolgozik>
 
-	<dolgozik DOLGOZIK_ID="4" RÉSZLEG_FK="2" DOLGOZÓ_FK="4">
+	<dolgozik DOLGOZIK_ID="4" DOLGOZÓ_FK="4" RÉSZLEG_FK="2">
 		<beosztás>Villanyszerelő</beosztás>
 	</dolgozik>
 
-	<dolgozik DOLGOZIK_ID="5" RÉSZLEG_FK="3" DOLGOZÓ_FK="5">
+	<dolgozik DOLGOZIK_ID="5" DOLGOZÓ_FK="5" RÉSZLEG_FK="3">
 		<beosztás>Informatikus</beosztás>
 	</dolgozik>
 
-	<dolgozik DOLGOZIK_ID="6" RÉSZLEG_FK="3" DOLGOZÓ_FK="6">
+	<dolgozik DOLGOZIK_ID="6" DOLGOZÓ_FK="6" RÉSZLEG_FK="3">
 		<beosztás>Gazdasági tanácsadó</beosztás>
 	</dolgozik>
 
@@ -152,7 +146,7 @@ xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
 	</dolgozó>
 
 	<dolgozó DOLGOZÓ_ID="5">
-		<név>Jámbor Andrea</név>
+		<név>Cziglédi Bálint</név>
 	</dolgozó>
 
 	<dolgozó DOLGOZÓ_ID="6">
@@ -162,15 +156,15 @@ xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
 
 
 	<!-- Vezeti -->
-	<vezeti VEZETI_ID="1" RÉSZLEG_FK="1" DOLGOZÓ_FK="1">
-		<mikortól>2017-01-01</mikortól>
+	<vezeti DOLGOZÓ_FK="5" RÉSZLEG_FK="1" VEZETI_ID="1">
+		<mikortól>2023-12-05</mikortól>
 	</vezeti>
 
-	<vezeti VEZETI_ID="2" RÉSZLEG_FK="2" DOLGOZÓ_FK="3">
+	<vezeti DOLGOZÓ_FK="3" RÉSZLEG_FK="2" VEZETI_ID="2">
 		<mikortól>2019-04-15</mikortól>
 	</vezeti>
 
-	<vezeti VEZETI_ID="3" RÉSZLEG_FK="3" DOLGOZÓ_FK="6">
+	<vezeti DOLGOZÓ_FK="6" RÉSZLEG_FK="3" VEZETI_ID="3">
 		<mikortól>2020-09-07</mikortól>
 	</vezeti>
 

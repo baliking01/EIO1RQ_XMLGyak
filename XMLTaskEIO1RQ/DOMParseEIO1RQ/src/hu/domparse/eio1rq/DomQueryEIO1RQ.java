@@ -14,18 +14,20 @@ import java.util.StringJoiner;
 public class DomQueryEIO1RQ {
 	public static void main(String args[]) {
 		try {
+			// XML fájl beolvasása és dokumentum objekt elõkészítése
 			File inputFile = new File("XMLeio1rq.xml");
 	        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	        Document doc = dBuilder.parse(inputFile);
 	        doc.getDocumentElement().normalize();
 	        
+	        // Gyökérelem azonosítása
 	        System.out.print("2b) Gyökérelem: ");
 	        System.out.println(doc.getDocumentElement().getNodeName());
 	        NodeList nodes = doc.getElementsByTagName("rendelés");
 	        System.out.println("----------------------------");
 	        
-	        
+	        // A rendelések kilistázása
 	        System.out.println("\nAz összes rendelés listája");
 	        System.out.println("----------------------------");
 	        for(int i = 0; i < nodes.getLength(); i++) {
@@ -36,13 +38,14 @@ public class DomQueryEIO1RQ {
 	        	}
 	        }
 	        
+	        // A cégnél található részlegek számossága
 	        System.out.println("\nRészlegek száma");
 	        System.out.println("----------------------------");
 	        nodes = doc.getElementsByTagName("részleg");
 	        System.out.println(nodes.getLength());
 	        
 	        
-	        
+	        // Egyes részlegekre érkezett megrendelések száma
 	        System.out.println("\nMelyik részlegre mennyi megrendelés érkezett");
 	        System.out.println("----------------------------");
 	        int[] rendelesek = new int[nodes.getLength()];
@@ -64,8 +67,8 @@ public class DomQueryEIO1RQ {
 	        	}
 	        }
 	        
-	        
-	        System.out.println("\nAz második részlegen dolgozók listája");
+	        // Kilistázzuk a kizárólag 2. részlegen dolgozók neveit
+	        System.out.println("\nA második részlegen dolgozók listája");
 	        System.out.println("----------------------------");
 	        nodes = doc.getElementsByTagName("dolgozik");
 	        List<String> workersID = new ArrayList<String>();
@@ -89,7 +92,7 @@ public class DomQueryEIO1RQ {
 	        	}
 	        }
 	        
-	        
+	        // Bizonyos részlegek vezetõi mikor szereték meg a pozíciót
 	        System.out.println("\nEgyes részlegeket mikortól vezeti a kijelölt személy");
 	        System.out.println("----------------------------");
 	        nodes = doc.getElementsByTagName("vezeti");
