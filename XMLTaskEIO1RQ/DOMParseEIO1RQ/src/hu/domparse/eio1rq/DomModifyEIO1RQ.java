@@ -20,22 +20,22 @@ public class DomModifyEIO1RQ {
 		try {
 			File inputFile = new File("XMLeio1rq.xml");
 			
-			// Document lÈtrehoz·sa
+			// Document l√©trehoz√°sa
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder domBuilder = dbFactory.newDocumentBuilder();
 			Document doc = domBuilder.parse(inputFile);
 			
-			// Kiv·lasztott elemek mÛdosÌt·sa
+			// Kiv√°lasztott elemek m√≥dos√≠t√°sa
 			modify(doc);
 			
-			// ⁄j dokumentum mentÈse
+			// √öj dokumentum ment√©se
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(doc); 
 			StreamResult result = new StreamResult(new File("XMLeio1rq_Modified.xml"));
 			transformer.transform(source, result);
 	        
-			// Konzolra kiÌrat·s
+			// Konzolra ki√≠rat√°s
 			StreamResult resultConsole = new StreamResult(System.out);
 			transformer.transform(source, resultConsole);
 		} catch(Exception e) {
@@ -44,31 +44,31 @@ public class DomModifyEIO1RQ {
 	}
 	
 	public static void modify(Document doc) {
-		// 4. RendelÈs nevÈnek mÛdosÌt·sa
-		NodeList orders = doc.getElementsByTagName("rendelÈs");
+		// 4. Rendel√©s nev√©nek m√≥dos√≠t√°sa
+		NodeList orders = doc.getElementsByTagName("rendel√©s");
 		Element order = (Element) orders.item(3);
-		order.getElementsByTagName("termÈk_nÈv").item(0).setTextContent("CsirkemellfilÈ");
+		order.getElementsByTagName("term√©k_n√©v").item(0).setTextContent("Csirkemellfil√©");
 		
-		// 2. Megrendelı emai cÌmÈnek mÛdosÌt·sa
-		NodeList clients = doc.getElementsByTagName("megrendelı");
+		// 2. Megrendel≈ë emai c√≠m√©nek m√≥dos√≠t√°sa
+		NodeList clients = doc.getElementsByTagName("megrendel≈ë");
 		Element client = (Element) clients.item(1);
-		client.getElementsByTagName("elÈrhetısÈg").item(0).setTextContent("rothmayerbt@gmail.comm");
+		client.getElementsByTagName("el√©rhet≈ës√©g").item(0).setTextContent("rothmayerbt@gmail.comm");
 		
-		// 4. DolgozÛ nevÈnek megv·ltoztat·sa
-		NodeList workers = doc.getElementsByTagName("dolgozÛ");
+		// 4. Dolgoz√≥ nev√©nek megv√°ltoztat√°sa
+		NodeList workers = doc.getElementsByTagName("dolgoz√≥");
 		Element worker = (Element) workers.item(4);
-		worker.getElementsByTagName("nÈv").item(0).setTextContent("CziglÈdi B·lint");
+		worker.getElementsByTagName("n√©v").item(0).setTextContent("Czigl√©di B√°lint");
 		
-		// 1. RÈszleg vezetıjÈnek Ès a kinevezÈs d·tum·nak mÛdosÌt·sa
+		// 1. R√©szleg vezet≈ëj√©nek √©s a kinevez√©s d√°tum√°nak m√≥dos√≠t√°sa
 		NodeList leaders = doc.getElementsByTagName("vezeti");
 		Element leader = (Element) leaders.item(0);
-		leader.setAttribute("DOLGOZ”_FK", "5");
-		leader.getElementsByTagName("mikortÛl").item(0).setTextContent(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+		leader.setAttribute("DOLGOZ√ì_FK", "5");
+		leader.getElementsByTagName("mikort√≥l").item(0).setTextContent(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
 		
-		// LegrÈgebbi rendelÈs d·tum·nak mÛdosÌt·as
+		// Legr√©gebbi rendel√©s d√°tum√°nak m√≥dos√≠t√°as
 		NodeList orderList = doc.getElementsByTagName("rendel");
 		Element orderElement = (Element) orderList.item(4);
-		orderElement.getElementsByTagName("rendelÈs_d·tuma").item(0).setTextContent(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+		orderElement.getElementsByTagName("rendel√©s_d√°tuma").item(0).setTextContent(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
 		
 	}
 }

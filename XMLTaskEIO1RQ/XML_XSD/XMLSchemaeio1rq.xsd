@@ -87,7 +87,7 @@
       <xs:element name="elérhetőség">
         <xs:complexType>
           <xs:sequence>
-            <xs:element ref="tel_szám"/>
+            <xs:element ref="tel_szám" minOccurs="1" maxOccurs="unbounded"/>
             <xs:element ref="email"/>
           </xs:sequence>
         </xs:complexType>
@@ -210,15 +210,17 @@
       <xs:field xpath="@dolgozó"/>
     </xs:keyref>
 
-    <xs:keyref name="vezeti_dolgozó_kulcs" refer="dolgozó_kulcs">
-      <xs:selector xpath="vezeti"/>
-      <xs:field xpath="@dolgozó"/>
-    </xs:keyref>
-
     <xs:keyref name="vezeti_részleg_kulcs" refer="részleg_kulcs">
       <xs:selector xpath="vezeti"/>
       <xs:field xpath="@részleg"/>
     </xs:keyref>
+
+
+    <!-- 1:1 kapcsolatok -->
+    <xs:unique name="vezeti_dolgozó_egyegy">
+        <xs:selector xpath="vezeti"/>
+        <xs:field xpath="@dolgozó"/>
+    </xs:unique>
 
   </xs:element>
 

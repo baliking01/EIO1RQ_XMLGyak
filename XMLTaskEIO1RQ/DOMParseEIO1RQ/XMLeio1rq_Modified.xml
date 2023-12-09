@@ -69,12 +69,12 @@
 		<rendelés_dátuma>2023-08-23</rendelés_dátuma>
 	</rendel>
 
-	<rendel MEGRENDELŐ_FK="1" RENDEL_ID="4" RENDELÉS_FK="3">
+	<rendel MEGRENDELŐ_FK="1" RENDEL_ID="4" RENDELÉS_FK="4">
 		<rendelés_dátuma>2023-02-10</rendelés_dátuma>
 	</rendel>
 
-	<rendel MEGRENDELŐ_FK="3" RENDEL_ID="5" RENDELÉS_FK="3">
-		<rendelés_dátuma>2023-12-05</rendelés_dátuma>
+	<rendel MEGRENDELŐ_FK="3" RENDEL_ID="5" RENDELÉS_FK="5">
+		<rendelés_dátuma>2023-12-09</rendelés_dátuma>
 	</rendel>
 
 	<!-- Megrendelő -->
@@ -82,6 +82,7 @@
 		<cégnév>Fenyó és Társa Kft.</cégnév>
 		<elérhetőség>
 			<tel_szám>+3612045966</tel_szám>
+			<tel_szám>+3612621768</tel_szám>
 			<email>info@tlx.hu</email>
 		</elérhetőség>
 	</megrendelő>
@@ -157,7 +158,7 @@
 
 	<!-- Vezeti -->
 	<vezeti DOLGOZÓ_FK="5" RÉSZLEG_FK="1" VEZETI_ID="1">
-		<mikortól>2023-12-05</mikortól>
+		<mikortól>2023-12-09</mikortól>
 	</vezeti>
 
 	<vezeti DOLGOZÓ_FK="3" RÉSZLEG_FK="2" VEZETI_ID="2">

@@ -85,6 +85,7 @@ xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
 		<cégnév>Fenyó és Társa Kft.</cégnév>
 		<elérhetőség>
 			<tel_szám>+3612045966</tel_szám>
+			<tel_szám>+3612621768</tel_szám>
 			<email>info@tlx.hu</email>
 		</elérhetőség>
 	</megrendelő>

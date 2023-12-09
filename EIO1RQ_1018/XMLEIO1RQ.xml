@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Fesztivál_H2Z4X3 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+ xs:noNamespaceSchemaLocation="XMLSchemaH2Z4X3.xsd">
+
+    <fesztivál feszkód="1">
+        <név>Balaton Sound</név>
+        <helyszín>Zamárdi</helyszín>
+        <év>2022</év>
+    </fesztivál>
+    <fesztivál feszkód="2">
+        <név>Káposztafesztivál</név>
+        <helyszín>Demecser</helyszín>
+        <év>2021</év>
+    </fesztivál>
+
+    <tulajdonos tkód="11" fesztivál="1">
+        <név>Miskolci szerevező nonprofit zrt.</név>
+        <adószám>14387657-4-56</adószám>
+        <alapítás>2000</alapítás>
+        <bevétel>1200000</bevétel>
+    </tulajdonos>
+    <tulajdonos tkód="12" fesztivál="2">
+        <név>Miskolc Város Önkormányzata</név>
+        <adószám>11111111-3-40</adószám>
+        <alapítás>2000</alapítás>
+        <bevétel>3000000</bevétel>
+    </tulajdonos>
+
+    <fellépő felkód="21" fesztivál="2">
+        <név>Azahriah</név>
+        <ország>Magyarország</ország>
+        <díj>5000000</díj>
+    </fellépő>
+    <fellépő felkód="22" fesztivál="1">
+        <név>Tankcsapda</név>
+        <ország>Magyarország</ország>
+        <díj>350000</díj>
+    </fellépő>
+
+    <bár bkód="001" fesztivál="1">
+        <név>Alma Körte</név>
+        <ital>bor</ital>
+        <ital>sör</ital>
+        <ital>rum</ital>
+        <cég>Bandras kft.</cég>
+    </bár>
+    <bár bkód="011" fesztivál="2">
+        <név>Kiskocsma</név>
+        <ital>víz</ital>
+        <ital>pálinka</ital>
+        <ital>vodka</ital>
+        <ital>koktél</ital>
+        <cég>Te_en Kft.</cég>
+    </bár>
+
+    <alkalmazott akód="002" munkahely="100">
+        <név>Nagy Lajos</név>
+        <muszak>8-20</muszak>
+        <muszak>20-8</muszak>
+        <fizetés>350000</fizetés>
+    </alkalmazott>
+    <alkalmazott akód="022" munkahely="100">
+        <név>Kis Elemér</név>
+        <muszak>8-17</muszak>
+        <fizetés>420000</fizetés>
+    </alkalmazott>
+
+    <résztvevő rkód="9001" fesztivál="2">
+        <név>Kis Anna</név>
+        <diákigazolvány>76345578444</diákigazolvány>
+        <lakcím>
+            <település>Miskolc</település>
+            <utca>Soltész</utca>
+            <házszám>69</házszám>
+        </lakcím>
+    </résztvevő>
+    <résztvevő rkód="9002" fesztivál="2">
+        <név>Baog istván</név>
+        <lakcím>
+            <település>Kistarcsa</település>
+            <utca>Almaa</utca>
+            <házszám>422</házszám>
+        </lakcím>
+    </résztvevő>
+
+    <nyelvtudás nykód="2001">
+        <nyelv>angol</nyelv>
+        <szint>C1</szint>
+    </nyelvtudás>
+    <nyelvtudás nykód="2002">
+        <nyelv>francia</nyelv>
+        <szint>B2</szint>
+    </nyelvtudás>
+
+    <közvélemény kkód="1" megkérdezett="9002" nyelvtudás="2001">
+        <kérdező>Kis Ádám</kérdező>
+    </közvélemény>
+    <közvélemény kkód="2" megkérdezett="9002" nyelvtudás="2002">
+        <kérdező>Nagy Béla</kérdező>
+    </közvélemény>
+    <közvélemény kkód="3" megkérdezett="9001" nyelvtudás="2001">
+        <kérdező>Harmat Gyula</kérdező>
+    </közvélemény>
+
+</Fesztivál_H2Z4X3>

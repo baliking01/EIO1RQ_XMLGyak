@@ -1,148 +1,190 @@
-EIO1RQ_Logisztikai_C�g 
+<EIO1RQ_Logisztikai_Cég xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XMLSchemaeio1rq.xsd">
 
-	 
-	rendel�s 
-		term�k_n�v �sv�nyv�z 
-		mennyis�g 13 
-		lesz�ll�tva true 
-		sz�ll�t�si_hely 
-			ir�ny�t�_sz�m 3519 
-			v�ros Miskolc 
-			utca_h�zsz�m Apat utca 12. 
+	<!-- Rendelés -->
+	<rendelés RENDELÉS_ID="1" RÉSZLEG_FK="1">
+		<termék_név>Ásványvíz</termék_név>
+		<mennyiség>13</mennyiség>
+		<leszállítva>true</leszállítva>
+		<szállítási_hely>
+			<irányító_szám>3519</irányító_szám>
+			<város>Miskolc</város>
+			<utca_házszám>Apat utca 12.</utca_házszám>
+		</szállítási_hely>
+	</rendelés>
 
-	rendel�s 
-		term�k_n�v Hamburger pog�csa 
-		mennyis�g 20 
-		lesz�ll�tva false 
-		sz�ll�t�si_hely 
-			ir�ny�t�_sz�m 6723 
-			v�ros Szedeg 
-			utca_h�zsz�m Eperjesi sor 2. 
+	<rendelés RENDELÉS_ID="2" RÉSZLEG_FK="2">
+		<termék_név>Hamburger pogácsa</termék_név>
+		<mennyiség>20</mennyiség>
+		<leszállítva>false</leszállítva>
+		<szállítási_hely>
+			<irányító_szám>6723</irányító_szám>
+			<város>Szedeg</város>
+			<utca_házszám>Eperjesi sor 2.</utca_házszám>
+		</szállítási_hely>
+	</rendelés>
 
-	rendel�s 
-		term�k_n�v Sony WH-XB910N fejhallgat� 
-		mennyis�g 8 
-		lesz�ll�tva true 
-		sz�ll�t�si_hely 
-			ir�ny�t�_sz�m 9025 
-			v�ros Gy�r 
-			utca_h�zsz�m Akac utca 35. 
+	<rendelés RENDELÉS_ID="3" RÉSZLEG_FK="3">
+		<termék_név>Sony WH-XB910N fejhallgató</termék_név>
+		<mennyiség>8</mennyiség>
+		<leszállítva>true</leszállítva>
+		<szállítási_hely>
+			<irányító_szám>9025</irányító_szám>
+			<város>Győr</város>
+			<utca_házszám>Akac utca 35.</utca_házszám>
+		</szállítási_hely>
+	</rendelés>
 
-	rendel�s 
-		term�k_n�v Sert�skaraj 
-		mennyis�g 20 
-		lesz�ll�tva true 
-		sz�ll�t�si_hely 
-			ir�ny�t�_sz�m 7634 
-			v�ros P�cs 
-			utca_h�zsz�m Lankas utca 22. 
+	<rendelés RENDELÉS_ID="4" RÉSZLEG_FK="2">
+		<termék_név>Sertéskaraj</termék_név>
+		<mennyiség>20</mennyiség>
+		<leszállítva>true</leszállítva>
+		<szállítási_hely>
+			<irányító_szám>7634</irányító_szám>
+			<város>Pécs</város>
+			<utca_házszám>Lankas utca 22.</utca_házszám>
+		</szállítási_hely>
+	</rendelés>
 
-	rendel�s 
-		term�k_n�v Coca Cola Cherry 6x1.5L 
-		mennyis�g 17 
-		lesz�ll�tva false 
-		sz�ll�t�si_hely 
-			ir�ny�t�_sz�m 4028 
-			v�ros Debrecen 
-			utca_h�zsz�m Abonyi utca 72. 
+	<rendelés RENDELÉS_ID="5" RÉSZLEG_FK="1">
+		<termék_név>Coca Cola Cherry 6x1.5L</termék_név>
+		<mennyiség>17</mennyiség>
+		<leszállítva>false</leszállítva>
+		<szállítási_hely>
+			<irányító_szám>4028</irányító_szám>
+			<város>Debrecen</város>
+			<utca_házszám>Abonyi utca 72.</utca_házszám>
+		</szállítási_hely>
+	</rendelés>
 
-	 
-	rendel 
-		rendel�s_d�tuma 2023-01-17 
+	<!-- Rendel -->
+	<rendel MEGRENDELŐ_FK="1" RENDEL_ID="1" RENDELÉS_FK="1">
+		<rendelés_dátuma>2023-01-17</rendelés_dátuma>
+	</rendel>
 
-	rendel 
-		rendel�s_d�tuma 2023-06-04 
+	<rendel MEGRENDELŐ_FK="2" RENDEL_ID="2" RENDELÉS_FK="2">
+		<rendelés_dátuma>2023-06-04</rendelés_dátuma>
+	</rendel>
 	
-	rendel 
-		rendel�s_d�tuma 2023-08-23 
+	<rendel MEGRENDELŐ_FK="3" RENDEL_ID="3" RENDELÉS_FK="3">
+		<rendelés_dátuma>2023-08-23</rendelés_dátuma>
+	</rendel>
 
-	rendel 
-		rendel�s_d�tuma 2023-02-10 
+	<rendel MEGRENDELŐ_FK="1" RENDEL_ID="4" RENDELÉS_FK="4">
+		<rendelés_dátuma>2023-02-10</rendelés_dátuma>
+	</rendel>
 
-	rendel 
-		rendel�s_d�tuma 2022-11-03 
+	<rendel MEGRENDELŐ_FK="3" RENDEL_ID="5" RENDELÉS_FK="5">
+		<rendelés_dátuma>2022-11-03</rendelés_dátuma>
+	</rendel>
 
-	 
-	megrendel� 
-		c�gn�v Feny� �s T�rsa Kft. 
-		el�rhet�s�g 
-			tel_sz�m +3612045966 
-			email info@tlx.hu 
+	<!-- Megrendelő -->
+	<megrendelő MEGRENDELŐ_ID="1">
+		<cégnév>Fenyó és Társa Kft.</cégnév>
+		<elérhetőség>
+			<tel_szám>+3612045966</tel_szám>
+			<tel_szám>+3612621768</tel_szám>
+			<email>info@tlx.hu</email>
+		</elérhetőség>
+	</megrendelő>
 
-	megrendel� 
-		c�gn�v Rothmayer Bt. 
-		el�rhet�s�g 
-			tel_sz�m +3633413665 
-			email rothmayer1@gmail.com 
+	<megrendelő MEGRENDELŐ_ID="2">
+		<cégnév>Rothmayer Bt.</cégnév>
+		<elérhetőség>
+			<tel_szám>+3633413665</tel_szám>
+			<email>rothmayer1@gmail.com</email>
+		</elérhetőség>
+	</megrendelő>
 
-	megrendel� 
-		c�gn�v Horv�th Uno Kft. 
-		el�rhet�s�g 
-			tel_sz�m +36705469391 
-			email horvathuno@gmail.com 
-
-
-
-	 
-	dolgozik 
-		beoszt�s Logisztikai menedzser 
-
-	dolgozik 
-		beoszt�s �lelmiszer m�rn�k 
-
-	dolgozik 
-		beoszt�s Targonca kezel� 
-
-	dolgozik 
-		beoszt�s Villanyszerel� 
-
-	dolgozik 
-		beoszt�s Informatikus 
-
-	dolgozik 
-		beoszt�s Gazdas�gi tan�csad� 
+	<megrendelő MEGRENDELŐ_ID="3">
+		<cégnév>Horváth Uno Kft.</cégnév>
+		<elérhetőség>
+			<tel_szám>+36705469391</tel_szám>
+			<email>horvathuno@gmail.com</email>
+		</elérhetőség>
+	</megrendelő>
 
 
 
-	 
-	dolgoz� 
-		n�v Kov�cs B�la 
+	<!-- Dolgozik -->
+	<dolgozik DOLGOZIK_ID="1" DOLGOZÓ_FK="1" RÉSZLEG_FK="1">
+		<beosztás>Logisztikai menedzser</beosztás>
+	</dolgozik>
 
-	dolgoz� 
-		n�v Kiss J�nos 
+	<dolgozik DOLGOZIK_ID="2" DOLGOZÓ_FK="2" RÉSZLEG_FK="1">
+		<beosztás>Élelmiszer mérnök</beosztás>
+	</dolgozik>
 
-	dolgoz� 
-		n�v Eged Csan�d 
+	<dolgozik DOLGOZIK_ID="3" DOLGOZÓ_FK="3" RÉSZLEG_FK="2">
+		<beosztás>Targonca kezelő</beosztás>
+	</dolgozik>
 
-	dolgoz� 
-		n�v Kun Tam�s 
+	<dolgozik DOLGOZIK_ID="4" DOLGOZÓ_FK="4" RÉSZLEG_FK="2">
+		<beosztás>Villanyszerelő</beosztás>
+	</dolgozik>
 
-	dolgoz� 
-		n�v J�mbor Andrea 
+	<dolgozik DOLGOZIK_ID="5" DOLGOZÓ_FK="5" RÉSZLEG_FK="3">
+		<beosztás>Informatikus</beosztás>
+	</dolgozik>
 
-	dolgoz� 
-		n�v T�th S�ndor 
-
-
-
-	 
-	vezeti 
-		mikort�l 2017-01-01 
-
-	vezeti 
-		mikort�l 2019-04-15 
-
-	vezeti 
-		mikort�l 2020-09-07 
+	<dolgozik DOLGOZIK_ID="6" DOLGOZÓ_FK="6" RÉSZLEG_FK="3">
+		<beosztás>Gazdasági tanácsadó</beosztás>
+	</dolgozik>
 
 
 
-	 
-	r�szleg 
-		n�v �lelmiszer 
+	<!-- Dolgozó -->
+	<dolgozó DOLGOZÓ_ID="1">
+		<név>Kovács Béla</név>
+	</dolgozó>
 
-	r�szleg 
-		n�v Ital 
+	<dolgozó DOLGOZÓ_ID="2">
+		<név>Kiss János</név>
+	</dolgozó>
+
+	<dolgozó DOLGOZÓ_ID="3">
+		<név>Eged Csanád</név>
+	</dolgozó>
+
+	<dolgozó DOLGOZÓ_ID="4">
+		<név>Kun Tamás</név>
+	</dolgozó>
+
+	<dolgozó DOLGOZÓ_ID="5">
+		<név>Jámbor Andrea</név>
+	</dolgozó>
+
+	<dolgozó DOLGOZÓ_ID="6">
+		<név>Tóth Sándor</név>
+	</dolgozó>
+
+
+
+	<!-- Vezeti -->
+	<vezeti DOLGOZÓ_FK="1" RÉSZLEG_FK="1" VEZETI_ID="1">
+		<mikortól>2017-01-01</mikortól>
+	</vezeti>
+
+	<vezeti DOLGOZÓ_FK="3" RÉSZLEG_FK="2" VEZETI_ID="2">
+		<mikortól>2019-04-15</mikortól>
+	</vezeti>
+
+	<vezeti DOLGOZÓ_FK="6" RÉSZLEG_FK="3" VEZETI_ID="3">
+		<mikortól>2020-09-07</mikortól>
+	</vezeti>
+
+
+
+	<!-- Részleg -->
+	<részleg RÉSZLEG_ID="1">
+		<név>Élelmiszer</név>
+	</részleg>
+
+	<részleg RÉSZLEG_ID="2">
+		<név>Ital</név>
+	</részleg>
 	
-	r�szleg 
-		n�v Informatika
+	<részleg RÉSZLEG_ID="3">
+		<név>Informatika</név>
+	</részleg>
+
+</EIO1RQ_Logisztikai_Cég>

@@ -13,8 +13,6 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 public class DomWriteEIO1RQ {
 	public static void main(String args[]) {
@@ -23,18 +21,18 @@ public class DomWriteEIO1RQ {
 	        DocumentBuilder dbBuilder = dbFactory.newDocumentBuilder();
 	        Document document = dbBuilder.newDocument();
 	        
-	        // GyˆkÈrelem
-	        Element root = document.createElement("EIO1RQ_Logisztikai_CÈg");
+	        // Gy√∂k√©relem
+	        Element root = document.createElement("EIO1RQ_Logisztikai_C√©g");
 	        root.setAttribute("xmlns:xs", "http://www.w3.org/2001/XMLSchema-instance");
 	        root.setAttribute("xs:noNamespaceSchemaLocation", "XMLSchemaeio1rq.xsd");
 	        document.appendChild(root);
 	        
-	        // RendelÈs
-	        root.appendChild(document.createComment("RendelÈsek"));
-	        createOrder(document, root, "1", "1", "¡sv·nyvÌz", "13", "true", "3519", "Miskolc", "Apat utca 12.");
-	        createOrder(document, root, "2", "2", "Hamburger pog·csa", "20", "false", "6723", "Szeged", "Eperjesi sor 2.");
-	        createOrder(document, root, "3", "3", "Sony WH-XB910N fejhallgatÛ", "8", "true", "9025", "Gyır", "Akac utca 35.");
-	        createOrder(document, root, "4", "4", "SertÈskaraj", "20", "true", "7634", "PÈcs", "Lankas utca 22.");
+	        // Rendel√©s
+	        root.appendChild(document.createComment("Rendel√©sek"));
+	        createOrder(document, root, "1", "1", "√Åsv√°nyv√≠z", "13", "true", "3519", "Miskolc", "Apat utca 12.");
+	        createOrder(document, root, "2", "2", "Hamburger pog√°csa", "20", "false", "6723", "Szeged", "Eperjesi sor 2.");
+	        createOrder(document, root, "3", "3", "Sony WH-XB910N fejhallgat√≥", "8", "true", "9025", "Gy√µr", "Akac utca 35.");
+	        createOrder(document, root, "4", "4", "Sert√©skaraj", "20", "true", "7634", "P√©cs", "Lankas utca 22.");
 	        createOrder(document, root, "5", "5", "Coca Cola Cherry 6x1.5L", "17", "false", "4028", "Debrecen", "Abonyi utca 72.");
 
 	        // Rendel kapcsolat
@@ -46,11 +44,11 @@ public class DomWriteEIO1RQ {
 	        createOrderConn(document, root, "5", "5", "3", "2022-11-03");
 	        
 	        
-	        // Megrendelı
-	        root.appendChild(document.createComment("Megrendelı"));
-	        createClient(document, root, "1", "FenyÛ Ès T·rsa Kft.", "+3612045966", "info@tlx.hu");
+	        // Megrendel√µ
+	        root.appendChild(document.createComment("Megrendel√µ"));
+	        createClient(document, root, "1", "Feny√≥ √©s T√°rsa Kft.", "+3612045966", "info@tlx.hu");
 	        createClient(document, root, "2", "Rothmayer Bt.", "+3633413665", "rothmayer1@gmail.com");
-	        createClient(document, root, "3", "Horv·th Uno Kft.", "+36705469391", "horvathuno@gmail.com");
+	        createClient(document, root, "3", "Horv√°th Uno Kft.", "+36705469391", "horvathuno@gmail.com");
 	        
 	        // Dolgozik kapcsolat
 	        root.appendChild(document.createComment("Dolgozik"));
@@ -61,14 +59,14 @@ public class DomWriteEIO1RQ {
 	        createWorking(document, root, "5", "3", "5", "Logisztikai menedzser");
 	        createWorking(document, root, "6", "3", "6", "Logisztikai menedzser");
 
-	        // DolgozÛ
-	        root.appendChild(document.createComment("DolgozÛ"));
-	        createWorker(document, root, "1", "Kov·cs BÈla");
-	        createWorker(document, root, "2", "Kiss J·nos");
-	        createWorker(document, root, "3", "Eged Csan·d");
-	        createWorker(document, root, "4", "Kun Tam·s");
-	        createWorker(document, root, "5", "J·mbor Andrea");
-	        createWorker(document, root, "6", "TÛth S·ndor");
+	        // Dolgoz√≥
+	        root.appendChild(document.createComment("Dolgoz√≥"));
+	        createWorker(document, root, "1", "Kov√°cs B√©la");
+	        createWorker(document, root, "2", "Kiss J√°nos");
+	        createWorker(document, root, "3", "Eged Csan√°d");
+	        createWorker(document, root, "4", "Kun Tam√°s");
+	        createWorker(document, root, "5", "J√°mbor Andrea");
+	        createWorker(document, root, "6", "T√≥th S√°ndor");
 	        
 	        
 	        // Vezeti
@@ -78,27 +76,27 @@ public class DomWriteEIO1RQ {
 	        createLeading(document, root, "3", "3", "6", "2020-09-07");
 	        
 	        
-	        // RÈszleg
-	        root.appendChild(document.createComment("RÈszleg"));
-	        createDivision(document, root, "1", "…lelmiszer");
+	        // R√©szleg
+	        root.appendChild(document.createComment("R√©szleg"));
+	        createDivision(document, root, "1", "√âlelmiszer");
 	        createDivision(document, root, "2", "Ital");
 	        createDivision(document, root, "3", "Informatika");
 
 	        
-	        // Documentum felÈpÌtÈse
+	        // Documentum fel√©p√≠t√©se
 	        TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			transformer.setOutputProperty("{https://xml.apache.org/xslt}indent-amount", "2");
 			
-			// Kimeneti f·jl
+			// Kimeneti f√°jl
 			DOMSource source = new DOMSource(document);
 			File outputFile = new File("XMLeio1rq1.xml");
 			StreamResult file = new StreamResult(outputFile);
 			transformer.transform(source, file);
 			
-			//Konzolra kiÌr·s
+			//Konzolra ki√≠r√°s
 			StreamResult console = new StreamResult(System.out);
 			transformer.transform(source, console);
 		}catch(Exception e) {
@@ -110,19 +108,19 @@ public class DomWriteEIO1RQ {
 	public static void createOrder(Document document, Element root, String id, String div_fk, String name,
 			String amount, String delivered, String irsz, String city, String dest) {
 		
-		Element order = document.createElement("rendelÈs");
-		order.setAttribute("RENDEL…S_ID", id);
-		order.setAttribute("R…SZLEG_FK", div_fk);
+		Element order = document.createElement("rendel√©s");
+		order.setAttribute("RENDEL√âS_ID", id);
+		order.setAttribute("R√âSZLEG_FK", div_fk);
 		
 		
-		Element _name = createElementValue(document, "nÈv", name);
-		Element _amount = createElementValue(document, "mennyisÈg", amount);
-		Element _delivered = createElementValue(document, "lesz·llÌtva", delivered);
+		Element _name = createElementValue(document, "n√©v", name);
+		Element _amount = createElementValue(document, "mennyis√©g", amount);
+		Element _delivered = createElementValue(document, "lesz√°ll√≠tva", delivered);
 
-		Element _destination = document.createElement("sz·llÌt·si_hely");
-		Element _irsz = createElementValue(document, "ir·nyÌtÛsz·m", irsz);
-		Element _city = createElementValue(document, "v·ros", city);
-		Element _dest = createElementValue(document, "utca_h·zsz·m", dest);
+		Element _destination = document.createElement("sz√°ll√≠t√°si_hely");
+		Element _irsz = createElementValue(document, "ir√°ny√≠t√≥sz√°m", irsz);
+		Element _city = createElementValue(document, "v√°ros", city);
+		Element _dest = createElementValue(document, "utca_h√°zsz√°m", dest);
 		
 		_destination.appendChild(_irsz);
 		_destination.appendChild(_city);
@@ -141,10 +139,10 @@ public class DomWriteEIO1RQ {
 		
 		Element orderConn = document.createElement("rendel");
 		orderConn.setAttribute("RENDEL_ID", id);
-		orderConn.setAttribute("RENDEL…S_FK", order_fk);
-		orderConn.setAttribute("MEGRENDEL’_FK", client_fk);
+		orderConn.setAttribute("RENDEL√âS_FK", order_fk);
+		orderConn.setAttribute("MEGRENDEL√ï_FK", client_fk);
 		
-		Element _date = createElementValue(document, "rendelÈs_d·tuma", date);
+		Element _date = createElementValue(document, "rendel√©s_d√°tuma", date);
 		orderConn.appendChild(_date);
 		
 		root.appendChild(orderConn);
@@ -153,12 +151,12 @@ public class DomWriteEIO1RQ {
 	public static void createClient(Document document, Element root, String id, String name,
 			String phone, String email) {
 		
-		Element orderClient = document.createElement("megrendelı");
-		orderClient.setAttribute("MEGRENDEL’_ID", id);
+		Element orderClient = document.createElement("megrendel√µ");
+		orderClient.setAttribute("MEGRENDEL√ï_ID", id);
 		
-		Element _name = createElementValue(document, "cÈgnÈv", name);
-		Element _contact = document.createElement("elÈrhetısÈg"); 
-		Element _phone= createElementValue(document, "tel_sz·m", phone);
+		Element _name = createElementValue(document, "c√©gn√©v", name);
+		Element _contact = document.createElement("el√©rhet√µs√©g"); 
+		Element _phone= createElementValue(document, "tel_sz√°m", phone);
 		Element _email = createElementValue(document, "email", email);
 		
 		_contact.appendChild(_phone);
@@ -175,20 +173,20 @@ public class DomWriteEIO1RQ {
 		
 		Element working = document.createElement("dolgozik");
 		working.setAttribute("DOLGOZIK_ID", id);
-		working.setAttribute("R…SZLEG_FK", div_fk);
-		working.setAttribute("DOLGOZ”_FK", worker_fk);
+		working.setAttribute("R√âSZLEG_FK", div_fk);
+		working.setAttribute("DOLGOZ√ì_FK", worker_fk);
 		
-		Element _position = createElementValue(document, "beoszt·s", position);
+		Element _position = createElementValue(document, "beoszt√°s", position);
 		working.appendChild(_position);
 		
 		root.appendChild(working);
 	}
 	
 	public static void createWorker(Document document, Element root, String id, String name) {
-		Element worker = document.createElement("dolgozÛ");
-		worker.setAttribute("DOLGOZ”_ID", id);
+		Element worker = document.createElement("dolgoz√≥");
+		worker.setAttribute("DOLGOZ√ì_ID", id);
 		
-		Element _name = createElementValue(document, "nÈv", name);
+		Element _name = createElementValue(document, "n√©v", name);
 		worker.appendChild(_name);
 		
 		root.appendChild(worker);
@@ -198,20 +196,20 @@ public class DomWriteEIO1RQ {
 			String worker_fk, String date) {
 		Element leading = document.createElement("vezeti");
 		leading.setAttribute("VEZETI_ID", id);
-		leading.setAttribute("R…SZLEG_FK", div_fk);
-		leading.setAttribute("DOLGOZ”_FK", worker_fk);
+		leading.setAttribute("R√âSZLEG_FK", div_fk);
+		leading.setAttribute("DOLGOZ√ì_FK", worker_fk);
 		
-		Element _date = createElementValue(document, "mikortÛl", date);
+		Element _date = createElementValue(document, "mikort√≥l", date);
 		leading.appendChild(_date);
 		
 		root.appendChild(leading);
 	}
 	
 	public static void createDivision(Document document, Element root, String id, String name) {
-		Element division = document.createElement("rÈszleg");
-		division.setAttribute("R…SZLEG_ID", id);
+		Element division = document.createElement("r√©szleg");
+		division.setAttribute("R√âSZLEG_ID", id);
 		
-		Element _name = createElementValue(document, "nÈv", name);
+		Element _name = createElementValue(document, "n√©v", name);
 		division.appendChild(_name);
 		
 		root.appendChild(division);

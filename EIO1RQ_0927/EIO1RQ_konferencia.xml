@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+    <konferencia>
+        <cim>Java prog meer</cim>
+        <hallgatok>
+            <hallgato>
+                <nev>Kis Janos</nev>
+                <lakcim>Miskolc alma u 12</lakcim>
+            </hallgato>
+            <hallgato>
+                <nev>Nagy Elemér</nev>
+                <lakcim>Miskolc alma u 13</lakcim>
+            </hallgato>
+        </hallgatok>
+        <helyszin>Miskolci Egyeteme Informatika épület</helyszin>
+        <eloado>
+            <nev>Éles Tamás</nev>
+            <adoszam>6969425</adoszam>
+            <lakcim>Debrecen harsfa ut 13</lakcim>
+        </eloado>
+        <datum>2034 09 24</datum>
+    </konferencia>
