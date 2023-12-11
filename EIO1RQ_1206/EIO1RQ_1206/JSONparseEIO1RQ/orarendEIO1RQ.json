@@ -1,0 +1,102 @@
+{
+    "EIO1RQ_orarend": {
+      "ora": [
+        {
+          "targy": "WEB Technológiák",
+          "típus": "előadás",
+          "idopont": {
+            "nap": "Hétfő",
+            "tol": "14:00",
+            "ig": "15:30"
+          },
+          "helyszín": "A1 305.",
+          "oktato": "Agárdi Anita",
+          "szak": "Programtervező informatikus"
+        },
+        {
+          "targy": "WEB Technológiák",
+          "típus": "gyakorlat",
+          "idopont": {
+            "nap": "Hétfő",
+            "tol": "16:00",
+            "ig": "17:30"
+          },
+          "helyszín": "Inf. 202.",
+          "oktato": "Agárdi Anita",
+          "szak": "Programtervező informatikus"
+        },
+        {
+          "targy": "Mesterséges Intelligencia",
+          "típus": "előadás",
+          "idopont": {
+            "nap": "Kedd",
+            "tol": "10:00",
+            "ig": "11:30"
+          },
+          "helyszín": "A1 XXXII",
+          "oktato": "Fazekas Levente",
+          "szak": "Programtervező informatikus"
+        },
+        {
+          "targy": "Mesterséges Intelligencia",
+          "típus": "gyakorlat",
+          "idopont": {
+            "nap": "Csütörtök",
+            "tol": "10:00",
+            "ig": "11:30"
+          },
+          "helyszín": "A2 I.",
+          "oktato": "Fazekas Levente",
+          "szak": "Programtervező informatikus"
+        },
+        {
+          "targy": "Adatkezelés XML-ben",
+          "típus": "előadás",
+          "idopont": {
+            "nap": "Kedd",
+            "tol": "12:00",
+            "ig": "13:30"
+          },
+          "helyszín": "A1 XXXII",
+          "oktato": "Dr. Bednarik László",
+          "szak": "Programtervező informatikus"
+        },
+        {
+          "targy": "Adatkezelés XML-ben",
+          "típus": "gyakorlat",
+          "idopont": {
+            "nap": "Szerda",
+            "tol": "10:00",
+            "ig": "11:30"
+          },
+          "helyszín": "Inf. 101.",
+          "oktato": "Dr. Bednarik László",
+          "szak": "Programtervező informatikus"
+        },
+        {
+          "targy": "Vállalati Információs Rendszerek",
+          "típus": "előadás",
+          "idopont": {
+            "nap": "Szerda",
+            "tol": "14:00",
+            "ig": "15:30"
+          },
+          "helyszín": "Inf. 101.",
+          "oktato": "Dr. Sasvári Péter",
+          "szak": "Programtervező informatikus"
+        },
+        {
+          "targy": "Vállalati Információs Rendszerek",
+          "típus": "gyakorlat",
+          "idopont": {
+            "nap": "Szerda",
+            "tol": "18:00",
+            "ig": "19:30"
+          },
+          "helyszín": "Inf. 103.",
+          "oktato": "Dr. Sasvári Péter",
+          "szak": "Programtervező informatikus"
+        }
+      ]
+    }
+  }
