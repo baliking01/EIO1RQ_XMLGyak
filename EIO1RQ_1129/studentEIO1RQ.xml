@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<class>
+	<student id='1'>
+		<vezetéknév>Nagy</vezetéknév>
+		<keresztnév>Balázs</keresztnév>
+		<becenév>balazs</becenév>
+		<kor>21</kor>
+		<osztondij>0</osztondij>
+	</student>
+
+	<student id='2'>
+		<vezetéknév>Toth</vezetéknév>
+		<keresztnév>Sándor</keresztnév>
+		<becenév>Sanyi</becenév>
+		<kor>31</kor>
+		<osztondij>100000</osztondij>
+	</student>
+	
+	<student id='3'>
+		<vezetéknév>Kis</vezetéknév>
+		<keresztnév>János</keresztnév>
+		<becenév>Jani</becenév>
+		<kor>22</kor>
+		<osztondij>40000</osztondij>
+	</student>
+
+    <student id='4'>
+		<vezetéknév>Nagy</vezetéknév>
+		<keresztnév>Eszter</keresztnév>
+		<becenév>Eszti</becenév>
+		<kor>20</kor>
+		<osztondij>30000</osztondij>
+	</student>
+
+
+	
+	
+</class>
